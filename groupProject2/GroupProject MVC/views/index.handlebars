@@ -1,33 +1,104 @@
-<div id="home">
-  <div class="container">
-    <div class="row">
-      <div class="col-8 offset-2">
-        <h1>{{msg}}</h1>
-        <h2>This is our Home Page!</h2>
-        <form class="clearfix mb-4" action="POST">
-          <div class="form-group">
-            <label for="example-text">Example Text</label>
-            <input type="text" id="example-text" class="form-control" aria-describedby="example-text" placeholder="Enter Example Text">
-          </div>
-          <div class="form-group">
-            <label for="example-description">Example Description</label>
-            <textarea class="form-control" id="example-description" aria-describedby="example-description" placeholder="Enter Example Description"></textarea>
-          </div>
-          <button id="submit" class="btn btn-primary float-right">Submit</button>
-        </form>
-        <h3>Examples:</h3>
-        <ul id="example-list" class="list-group">
-          {{#each examples}}
-          <li data-id="{{this.id}}" class="list-group-item">
-            <a href="example/{{this.id}}">{{this.text}}</a>
-            <button class="btn btn-danger float-right delete">ｘ</button>
-          </li>
-          {{/each}}
+<div id="container d-flex flex-column justify-content-center>
+  <header class =" text-center text-black>
+  <h1 class="display-4">Welcome to Jello</h1>
+
+  <div class="row text-dark>
+      <div class =" col-md-4 task-list my-4">
+    <h2 class="task-list-title h5 bg-light p-3 my-0">To Do</h2>
+    <ul class="task-list-ul list-unstyled bg-light p-3 my-0" data-status="todo">
+      {{#each todos}}
+      {{#ifeq status "todo"}}
+      {{> todos/todo-block}}
+      {{/ifeq}}
+      {{/each}}
+    </ul>
+    <div class="add-todo task-list-footer bg-light my-0 p-3" data-status="todo">
+      <i class="fas fa-plus"></i>Add a Task
+    </div>
+  </div>
+
+  <div class="col-md-4 task-list my-4">
+    <h2 class="task-list-title h5 bg-light p-3 my-0">In Progress</h2>
+    <ul class="task-list-ul list-unstyled bg-light p-3 my-0" data-status="in-progress">
+      {{#each todos}}
+      {{#ifeq status "in-progress"}}
+      {{>todos/todo-block}}
+      {{/ifeq}}
+      {{/each}}
+    </ul>
+    <div class="add-todo task-list-footer bg-light my-0 p-3" data-status="in-progress">
+      <i class="fas fa-plus"></i>Add a Task
+    </div>
+  </div>
+
+  <div class="col-md-4 task-list my-4">
+    <h2 class="task-list-title h5 bg-light p-3 my-0">Complete</h2>
+    <ul class="task-list-ul list-unstyled bg-light p-3 my-0" data-status="complete">
+      {{#each todos}}
+      {{#ifeq status "complete"}}
+      {{>todos/todo-block}}
+      {{/ifeq}}
+      {{/each}}
+    </ul>
+    <div class="add-todo task-list-footer bg-light my-0 p-3" data-status="complete">
+      <i class="fas fa-plus"></i>Add a Task
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="add-task-modal" tabindex="-1" role="dialog" aria-labelledby="add-task-modal"
+  aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title"> Add a New Task</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form class="" action="/api/todos" method="POST">
+          <label for="task-input">Task:</label>
+          <input class="form-control" name="task" id="task-input" type="text">
+      </div>
+      <button type="submit" value="submit" class="btn btn-primary" id="submit-task"><i
+          class="fas fa-list"></i>Submit</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+<div class = "modal fade" id = "view-task-modal" tabindex="-1" role="dialog" aria-labelledby="view-task-modal" aria-hidden="true">
+  <div class ="modal-dialog modal-dialog-centered" role = "document">
+    <div class ="modal-content">
+      <div class = "modal-header">
+        <h5 class = "modal-title">View Task</h5>
+          <button type ="button" class ="close" data-dismiss="modal" aria-lable="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+      </div>
+      <div class ="modal-body">
+        <ul class ="list-unstyled">
+          <li>Task: <span id = "view-modal-task"></span>/li>
+          <li>Current Status: <span id = "view-modal-status"></span></li>
         </ul>
+        <form action ="">
+          <div class ="form-group">
+            <label for = "update-status"> Update Status</label>
+            <select name = "update-status" class ="form-control" id = "update-status">
+              <option value="todo">To Do</option>
+              <option value = "in-progress">In Progress</option>
+              <option value = "complete">Complete</option>
+            </select>
+          </div>
+          <button class ="btn btn-primary" id ="submit-status"><i class ="fas fa-list"></i>Submit Changes</button>
+        </form>
       </div>
     </div>
   </div>
 </div>
+
+
 
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="/js/index.js"></script>

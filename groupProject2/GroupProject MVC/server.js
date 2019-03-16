@@ -20,11 +20,13 @@ app.engine(
     helpers: {
       ifeq(a,b, options)
 
- {
-   console.log(a,b);
-   return (a === b) ? options.fn(this) : options.inverse(this);
- },
-    },
+
+      {
+        console.log(a,b);
+        return (a === b) ? options.fn(this) : options.inverse(this);
+      },
+         },
+
 
   })
 );

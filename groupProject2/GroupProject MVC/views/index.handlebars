@@ -48,7 +48,10 @@
         <i class="fas fa-plus"></i>Add a Task
       </div>
     </div>
+
 </div>
+
+
 
   <div class="modal fade" id="add-task-modal" tabindex="-1" role="dialog" aria-labelledby="add-task-modal"
     aria-hidden="true">
@@ -72,32 +75,37 @@
     </div>
   </div>
 
-<div class="modal fade" id="view-task-modal" tabindex="-1" role="dialog" aria-labelledby="view-task-modal"
-  aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title">View Task</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-lable="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <ul class="list-unstyled">
-          <li>Task: <span id="view-modal-task"></span>/li>
-          <li>Current Status: <span id="view-modal-status"></span></li>
-        </ul>
-        <form action="">
-          <div class="form-group">
-            <label for="update-status"> Update Status</label>
-            <select name="update-status" class="form-control" id="update-status">
-              <option value="todo">To Do</option>
-              <option value="in-progress">In Progress</option>
-              <option value="complete">Complete</option>
-            </select>
-          </div>
-          <button class="btn btn-primary" id="submit-status"><i class="fas fa-list"></i>Submit Changes</button>
-        </form>
+
+
+  <div class="modal fade" id="view-task-modal" tabindex="-1" role="dialog" aria-labelledby="view-task-modal"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">View Task</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-lable="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <ul class="list-unstyled">
+            <li>Task: <span id="view-modal-task"></span>/li>
+            <li>Current Status: <span id="view-modal-status"></span></li>
+          </ul>
+          <form action="">
+            <div class="form-group">
+              <label for="update-status"> Update Status</label>
+              <select name="update-status" class="form-control" id="update-status">
+                <option value="todo">To Do</option>
+                <option value="in-progress">In Progress</option>
+                <option value="complete">Complete</option>
+              </select>
+            </div>
+            <button class="btn btn-primary" id="submit-status"><i class="fas fa-list"></i>Submit Changes</button>
+          </form>
+        </div>
+
+
       </div>
     </div>
   </div>

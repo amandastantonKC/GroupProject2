@@ -8,21 +8,54 @@ module.exports = function(app) {
 
   // GET route for getting all of the todos
   app.get("/api/todos", function(req, res) {
-
+    db.Todo.findAll({
+      where: {
+        id: req.params.id
+      }
+    })
+    .then(function(dbTodo){
+      res.json(dbTodo);
+    });
   });
 
   // POST route for saving a new todo. You can create a todo using the data on req.body
   app.post("/api/todos", function(req, res) {
-
+    console.log(req.body);
+    db.Todo.create({
+      title: req.body.title,
+      body: req.body.body,
+    })
+    .then(function(dbTodo){
+      res.json(dbPost);
+    });
   });
 
   // DELETE route for deleting todos. You can access the todo's id in req.params.id
   app.delete("/api/todos/:id", function(req, res) {
-
+   db.Todo.destroy({
+     where: {
+       id: req.params.id
+     }
+   })
+    .then(function(dbTodo){
+      res.json(dbTodo)
+    });
   });
 
   // PUT route for updating todos. The updated todo will be available in req.body
   app.put("/api/todos", function(req, res) {
-
+db.Todo.update({
+  text: req.body.text,
+  complete: req.body.complete
+}, {
+  where: {
+    id:req.body.id
+  }
+}).then(function(dbTodo){
+  res.json(dbTodo);
+})
+.catch(function(err){
+  res.json(err);
+});
   });
 };

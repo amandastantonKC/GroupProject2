@@ -23,7 +23,7 @@ app.engine(
       console.log(a,b);
       return (a === b) ? options.fn(this) : options.inverse(this)
     },
-  },
+      },
   })
 );
 app.set("view engine", "handlebars");

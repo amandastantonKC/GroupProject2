@@ -19,12 +19,13 @@ app.engine(
     defaultLayout: "main",
     helpers: {
       ifeq(a,b, options)
+
  {
    console.log(a,b);
    return (a === b) ? options.fn(this) : options.inverse(this);
  },
     },
-    
+
   })
 );
 app.set("view engine", "handlebars");

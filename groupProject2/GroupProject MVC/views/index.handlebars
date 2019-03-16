@@ -1,4 +1,5 @@
 <div id="container d-flex flex-column justify-content-center">
+
   <header class=" text-center text-black">
     <h1 class="display-4">Welcome to Jello</h1>
   </header>
@@ -6,6 +7,7 @@
 <div class = "jumbotron">
   <div class="row text-dark">
     <div class=" col-md-4 task-list my-4">
+
       <h2 class="task-list-title h5 bg-light p-3 my-0">To Do</h2>
       <ul class="task-list-ul list-unstyled bg-light p-3 my-0" data-status="todo">
         {{#each todos}}
@@ -47,7 +49,8 @@
       </div>
     </div>
 
-  </div>
+</div>
+
 
 
   <div class="modal fade" id="add-task-modal" tabindex="-1" role="dialog" aria-labelledby="add-task-modal"
@@ -71,6 +74,7 @@
       </div>
     </div>
   </div>
+
 
 
   <div class="modal fade" id="view-task-modal" tabindex="-1" role="dialog" aria-labelledby="view-task-modal"
@@ -100,6 +104,7 @@
             <button class="btn btn-primary" id="submit-status"><i class="fas fa-list"></i>Submit Changes</button>
           </form>
         </div>
+
 
       </div>
     </div>

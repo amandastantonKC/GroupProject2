@@ -2,7 +2,7 @@
     {{#ifeq status "todo"}}
     <div class="task bg-danger text-white todo d-flex justify-content-between p-2" data-id="{{id}}"
         data-status="{{status}}">
-            {{id}}
+            {{!-- {{id}} --}}
             {{task}}
         <span class="float-right"><i class="view-task fas fa-ellipsis-h"></i></span>
     </div>
@@ -10,7 +10,7 @@
     {{#ifeq status "in-progress"}}
     <div class="task bg-warning text-white in-progress d-flex justify-content-between p-2" data-id="{{id}}"
         data-status="{{status}}">
-        {{id}}
+        {{!-- {{id}} --}}
         {{task}}
         <span class="float-right"><i class="view-task fas fa-ellipsis-h"></i></span>
     </div>
@@ -18,9 +18,9 @@
     {{#ifeq status "complete"}}
     <div class="task bg-success text-white in-progress d-flex justify-content-between p-2" data-id="{{id}}"
         data-status="{{status}}">
-        {{id}}
+        {{!-- {{id}} --}}
         {{task}}
-        <span class="float-right"><i class="view-task fas fa-ellipsis-h"></i></span>
+        <span class="float-right"><i class="view-task fas fa-ellipsis-h"></i><i class ="view-task fas fa-remove-h"></i></span>
     </div>
     {{/ifeq}}
 </li>

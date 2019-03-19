@@ -1,14 +1,14 @@
 $(document).ready(function() {
     $("#submit-task").on('click', function (event) {
         event.preventDefault();
-
+  
         var task = $("#task-input").val().trim();
-        var status = $(this).data("status");
+        var status = $(event.currentTarget).data("status");
         var data= {
             task,
             status,
         };
-
+  
         $.ajax({
             url: "api/todos",
             method: "POST",
@@ -16,31 +16,33 @@ $(document).ready(function() {
         }).then(
             function() {
                 console.log(data)
-            location.reload();
+            window.location.reload();
         });
     });
-
+  
     $("#submit-status").on("click", function (event){
         event.preventDefault();
-        var id = $(this).data("id");
+        var id = $(event.currentTarget).data("id");
+        var newStatus = {
+            status: []
+        };
         $.ajax({
-            url: `api/todos/${id}/${$("update-status").val()}`,
+            url: `api/todos/${id}/${$("#update-status").val()}`,
             method: "PUT",
         }).then(
             function() {
                 console.log(id);
-                location.reload();
+                window.location.reload();
             });
         
     });
-
+  
     $(".view-task").on("click", function (event) {
-        var id = $(this).closest(".task").data("id");
-
+        var id = $(event.currentTarget).closest(".task").data("id");
+  
         $.ajax({
             url: `api/todos/${id}`,
             method: "GET",
-
         }).then (
             function (result) {
                 $("#view-modal-task").text(result[0].task);
@@ -49,12 +51,12 @@ $(document).ready(function() {
                 $("#view-task-modal").modal('show');
             });
     });
-
+  
     $(".add-todo").on("click", function(event) {
         $("#submit-task").data("status", $(event.currentTarget).data("status"));
         $("#add-task-modal").modal("show");
     });
-
+  
     setDraggable($(".task"));
     $(".task-list-ul").droppable({
         accept: ".task",
@@ -63,7 +65,7 @@ $(document).ready(function() {
             setDraggable(cloned);
             var updatedStatus = $(event.target).data("status");
             var id = cloned.data("id");
-
+  
             if (updatedStatus !== cloned.data("status")) {
                 $.ajax({
                     url: `api/todos/${id}/${updatedStatus}`,
@@ -71,23 +73,24 @@ $(document).ready(function() {
                 }).then (
                     function () {
                         console.log("task");
-                        location.reload();
+                        window.location.reload();
                     });
                 
             }
         })
     });
-
+  
     function setDraggable(element) {
         element.draggable({
             start: function(event) {
-                $(event.target).addClass("dragged");
+                $(this).addClass("dragged");
             },
             stop: function(event) {
-                $(event.target).removeClass("dragged");
+                $(this).removeClass("dragged");
             },
-
+  
             revert: true,
         })
     }
-})
+  })
+  

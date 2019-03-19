@@ -2,8 +2,10 @@ $(document).ready(function() {
     $("#submit-task").on('click', function (event) {
         event.preventDefault();
 
+
         var task = $("#task-input").val().trim();
         var status = $(this).data("status");
+
         var data= {
             task,
             status,
@@ -16,6 +18,7 @@ $(document).ready(function() {
         }).then(
             function() {
                 console.log(data)
+
             location.reload();
         });
     });
@@ -25,10 +28,13 @@ $(document).ready(function() {
         var id = $(this).data("id");
         $.ajax({
             url: `api/todos/${id}/${$("update-status").val()}`,
+
+
             method: "PUT",
         }).then(
             function() {
                 console.log(id);
+
                 location.reload();
             });
         
@@ -40,6 +46,7 @@ $(document).ready(function() {
         $.ajax({
             url: `api/todos/${id}`,
             method: "GET",
+
 
         }).then (
             function (result) {
@@ -71,7 +78,9 @@ $(document).ready(function() {
                 }).then (
                     function () {
                         console.log("task");
+
                         location.reload();
+
                     });
                 
             }
@@ -91,3 +100,4 @@ $(document).ready(function() {
         })
     }
 })
+

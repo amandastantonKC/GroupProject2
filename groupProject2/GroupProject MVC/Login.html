@@ -9,50 +9,22 @@
         crossorigin="anonymous">
     <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
         integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-    <title>Group Project Login Page</title>
+    <link rel="stylesheet" href="css/style.css">
+
+    <title>Jello Login Page</title>
 </head>
 
 <body>
-    <div class="jumbotron">
-        <div class="row">
-            <div class="col-sm-4 offset-4">
-                <h2>Login into your Jello account</h2>
-            </div>
+    <div class="login-page">
+        <div class="form">
+          <form class="login-form">
+            <input type="text" placeholder="username"/>
+            <input type="password" placeholder="password"/>
+            <button>login</button>
+            <p class="message">Not registered? <a href="createAccount.html"><strong>Create an account</strong></a></p>
+          </form>
         </div>
-        <form>
-
-            <div class="row">
-                <div class="col-sm-4 offset-4">
-                    <div class="form-group">
-                        <label for="exampleInputEmail1">Email address</label>
-                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
-                            placeholder="Enter email">
-
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-sm-4 offset-4">
-                    <div class="form-group">
-                        <label for="exampleInputPassword1">Password</label>
-                        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-4 offset-4">
-                <button type="submit" class="btn btn-primary">Submit</button>
-            </div>
-
-            <p>
-                <div class="row">
-                <div class="col-sm-4 offset-4">
-                    <h4>If you don't have a Jello account, sign up for one here</h4>
-                    <a href="createAccount.html">Create an account here</a>
-                </div>
-            </div>
-            </p>
-        </form>
-
+      </div>
 
 </body>
 

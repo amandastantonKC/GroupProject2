@@ -18,7 +18,11 @@ app.engine("handlebars", exphbs({ defaultLayout: "main",
 helpers: {
   ifeq(a,b, options) {
     console.log(a,b);
-    return (a === b) ? options.fn(this) :options
+
+    // console.log(`options ${options}`);
+    // console.log(`function ${options.fn(this)}`)
+    return (a === b) ? options.fn(this) :null
+
   }
 } }));
 app.set("view engine", "handlebars");

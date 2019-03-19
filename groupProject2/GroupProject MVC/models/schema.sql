@@ -1,5 +1,0 @@
-DROP DATABASE IF EXISTS Jello_db;
-CREATE DATABASE Jello_db;
-
-DROP DATABASE IF EXISTS user_login_db;
-CREATE DATABASE user_login_db;

@@ -9,68 +9,24 @@
         crossorigin="anonymous">
     <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
         integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-    <title>Create account page</title>
+        <link rel="stylesheet" href="css/style.css">
+
+    <title>Jello Create an Account</title>
 </head>
 
 <body>
 
-    <div class="jumbotron">
-
-        <div class="row">
-            <div class="col-md-6 offset-3">
-                <h1>Create a Jello Account</h1>
-            </div>
+    <div class="login-page">
+        <div class="form">
+          <form class="login-form">
+            <input type="text" placeholder="name"/>
+            <input type="password" placeholder="password"/>
+            <input type="text" placeholder="email address"/>
+            <button>create</button>
+            <p class="message">Already registered? <a href="Login.html"><strong>Sign In</strong></a></p>
+          </form>
         </div>
-            <form>
-                <div class="row">
-                    <div class="col-sm-6 offset-3">
-                        <div class="form-group">
-                            <label for="exampleInputEmail1">User Name</label>
-                            <input type="email" class="form-control" id="exampleUserName" aria-describedby="emailHelp"
-                                placeholder="Enter your user name">
-
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-sm-6 offset-3">
-                        <div class="form-group">
-                            <label for="exampleInputPassword1">Full Name</label>
-                            <input type="password" class="form-control" id="exampleInputFullName" placeholder="Enter your full name">
-                        </div>
-                    </div>
-                </div>
-
-                <div class="row">
-                    <div class="col-sm-6 offset-3">
-                        <div class="form-group">
-                            <label for="exampleInputPassword1">Email Address</label>
-                            <input type="password" class="form-control" id="exampleInputEmail" placeholder="Enter your email address">
-                        </div>
-                    </div>
-                </div>
-
-                <div class="row">
-                    <div class="col-sm-6 offset-3">
-                        <div class="form-group">
-                            <label for="exampleInputPassword1">Password</label>
-                            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-6 offset-3">
-                    <button type="submit" class="btn btn-primary">Submit</button>
-                </div>
-
-
-
-
-
-
-
-            </form>
-        </div>
-
+    </div>
 
 
 </body>

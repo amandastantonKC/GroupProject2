@@ -4,7 +4,7 @@ $(document).ready(function() {
 
 
         var task = $("#task-input").val().trim();
-        var status = $(this).data("status");
+        var status = $(event.currentTarget).data("status");
 
         var data= {
             task,
@@ -19,15 +19,15 @@ $(document).ready(function() {
             function() {
                 console.log(data)
 
-            location.reload();
+            window.location.reload();
         });
     });
 
     $("#submit-status").on("click", function (event){
         event.preventDefault();
-        var id = $(this).data("id");
+        var id = $(event.currentTarget).data("id");
         $.ajax({
-            url: `api/todos/${id}/${$("update-status").val()}`,
+            url: `api/todos/${id}/${$("#update-status").val()}`,
 
 
             method: "PUT",
@@ -35,19 +35,17 @@ $(document).ready(function() {
             function() {
                 console.log(id);
 
-                location.reload();
+                window.location.reload();
             });
         
     });
 
     $(".view-task").on("click", function (event) {
-        var id = $(this).closest(".task").data("id");
+        var id = $(event.currentTarget).closest(".task").data("id");
 
         $.ajax({
             url: `api/todos/${id}`,
             method: "GET",
-
-
         }).then (
             function (result) {
                 $("#view-modal-task").text(result[0].task);
@@ -98,6 +96,8 @@ $(document).ready(function() {
 
             revert: true,
         })
-    }
-})
+    };
+
+  
+});
 

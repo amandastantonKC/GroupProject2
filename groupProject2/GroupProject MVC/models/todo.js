@@ -24,8 +24,8 @@ var todo = {
       cb(res);
     });
   },
-  delete: function(condition, cb) {
-    orm.delete("todos", condition, function(res) {
+  deleteOne: function(condition, cb) {
+    orm.deleteOne("todos", condition, function(res) {
       cb(res);
     });
   },

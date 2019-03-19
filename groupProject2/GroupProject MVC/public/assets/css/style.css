@@ -22,7 +22,6 @@ li {
   .jello{
     background-image: url("../photos/Jello.jpg");
     background-size: cover;
-    
   }
 
   #header1{
@@ -31,11 +30,7 @@ li {
 
   .dragged {
     z-index: 1;
-    transform: rotate(2deg);
-  }
-
-  .task-list {
-    
+    transform: rotate(3deg);
   }
   
 

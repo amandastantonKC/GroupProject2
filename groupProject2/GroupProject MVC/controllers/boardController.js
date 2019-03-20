@@ -56,9 +56,9 @@ router.put("/api/todos/:id/:status", function(req, res) {
 });
 
 router.delete("/api/todos/:id", function(req,res) {
-  var condition = `id = ${req.params.id}`;
+  var condition = "id = " + req.params.id;
   
-  todo.delete(condition, function (result) {
+  todo.deleteOne(condition, function (result) {
     if (result.changedRows === 0) {
       return res.status(404).end();
     } else {

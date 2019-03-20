@@ -1,46 +1,35 @@
 li {
 
-    padding: 5px;
-    margin: 5px;
-    background: #faebd7;
-  }
-  
-  .label {
-    font-weight: bold;
-  }
-  
-  .create-update-form {
-    padding: 5px;
-    margin: 5px;
-    background: aqua;
-  }
-  
-  .form-group {
-    margin-bottom: 5px;
-  }
+  padding: 5px;
+  margin: 5px;
+  background: #faebd7;
+}
 
-  .jello{
-    background-image: url("../photos/Jello.jpg");
-    background-size: cover;
-    
-  }
+.label {
+  font-weight: bold;
+}
 
-  #header1{
-  font-family:"Lobster Two"
-  }
+.create-update-form {
+  padding: 5px;
+  margin: 5px;
+  background: aqua;
+}
 
-  .dragged {
-    z-index: 1;
-    transform: rotate(2deg);
-  }
+.form-group {
+  margin-bottom: 5px;
+}
 
-  .task-list {
-    
-  }
-  
+.jello {
+  background-image: url("../photos/Jello.jpg");
+  background-size: cover;
 
-    
-    
-   
-   
+}
 
+#header1 {
+  font-family: "Lobster Two"
+}
+
+.dragged {
+  z-index: 1;
+  transform: rotate(2deg);
+}

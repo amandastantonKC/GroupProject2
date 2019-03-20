@@ -98,6 +98,19 @@ $(document).ready(function() {
         })
     };
 
+    $(".delete-task").on("click", function (event) {
+        event.preventDefault();
+
+        var id = $(".complete-task").data("id");
+
+        $.ajax({
+            type: "DELETE",
+            url: "api/todos/" + id
+        }).then(
+            window.location.reload()
+        );
+    })
+
   
 });
 

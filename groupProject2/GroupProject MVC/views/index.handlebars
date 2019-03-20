@@ -10,7 +10,7 @@
       <div class=" col-md-4 task-list my-4">
 
         <h2 class="task-list-title h5 bg-light p-3 my-0">To Do</h2>
-        <ul class="task-list-ul list-unstyled bg-light p-3 my-0" data-status="todo">
+        <ul class="task-list-ul list-unstyled bg-light p-3 my-0" data-status="todo" id ="sortable">
           {{#each todos}}
           {{#ifeq status "todo"}}
           {{> todos/todo-block}}
@@ -100,7 +100,6 @@
                   <option value="todo">To Do</option>
                   <option value="in-progress">In Progress</option>
                   <option value="complete">Complete</option>
-                  <option value = "delete">Delete</option>
                 </select>
               </div>
               <button class="btn btn-primary" id="submit-status"><i class="fas fa-list"></i> Submit Changes</button>

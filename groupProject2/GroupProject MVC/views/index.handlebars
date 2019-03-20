@@ -2,7 +2,7 @@
 
   <header id="header1" class=" text-center text-black">
     <h1 class="display-4">Welcome to Jello</h1>
-<link href="https://fonts.googleapis.com/css?family=Lobster+Two" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lobster+Two" rel="stylesheet">
   </header>
 
   <div class="jumbotron jello">
@@ -10,8 +10,8 @@
       <div class=" col-md-4 task-list my-4">
 
 
-        <h2 class="task-list-title h5 bg-light p-3 my-0">To Do</h2>
-        <ul class="task-list-ul list-unstyled bg-light p-3 my-0" data-status="todo" id ="sortable">
+        <h2 class="task-list-title h5 bg-primary p-3 my-0">To Do</h2>
+        <ul class="task-list-ul list-unstyled bg-light p-3 my-0" data-status="todo" id="sortable">
 
           {{#each todos}}
           {{#ifeq status "todo"}}
@@ -68,12 +68,14 @@
           </div>
           <div class="modal-body">
             {{!-- <form class="" action="/api/todos" method="POST"> --}}
-              <label for="task-input">Task:</label>
-              <input class="form-control" name="task" id="task-input" type="text">
+            <label for="task-input">Task:</label>
+            <input class="form-control" name="task" id="task-input" type="text">
           </div>
-          <button type="submit" value="submit" class="btn btn-primary" id="submit-task"><i
-              class="fas fa-list"></i> Submit</button>
-          </form>
+          <div class="modal-footer">
+            <button type="submit" value="submit" class="btn btn-outline-dark btn-sm" data-toggle="button"
+              id="submit-task"><i class="fas fa-list"></i> Submit</button>
+          </div>
+
         </div>
       </div>
     </div>
@@ -84,10 +86,10 @@
       aria-hidden="true">
       <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
-          <div class="modal-header">
+          <div class="modal-header bg-info">
             <h5 class="modal-title">View Task</h5>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
+              <span aria-hidden="true"><b>&times;</b></span>
             </button>
           </div>
           <div class="modal-body">
@@ -104,7 +106,9 @@
                   <option value="complete">Complete</option>
                 </select>
               </div>
-              <button class="btn btn-primary" id="submit-status"><i class="fas fa-list"></i> Submit Changes</button>
+              <div class = "modal-footer">
+              <button class="btn btn-outline-dark btn-sm" data-toggle="button" id="submit-status"><i class="fas fa-list"></i> Submit Changes</button>
+              </form>
             </form>
           </div>
 

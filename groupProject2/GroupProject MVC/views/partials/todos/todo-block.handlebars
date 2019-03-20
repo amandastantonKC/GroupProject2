@@ -4,7 +4,7 @@
         data-status="{{status}}">
             {{!-- {{id}} --}}
             {{task}}
-        <span class="float-right"><i class="view-task fas fa-ellipsis-h"></i></span>
+        <span class="float-right"><i class="view-task fas fa-edit"></i></span>
     </div>
     {{/ifeq}}
     {{#ifeq status "in-progress"}}
@@ -12,16 +12,16 @@
         data-status="{{status}}">
         {{!-- {{id}} --}}
         {{task}}
-        <span class="float-right"><i class="view-task fas fa-ellipsis-h"></i></span>
+        <span class="float-right"><i class="view-task fas fa-edit"></i></span>
     </div>
     {{/ifeq}}
     {{#ifeq status "complete"}}
 
-    <div class="complete-task bg-success text-white in-progress d-flex justify-content-between p-2" data-id="{{id}}"
+    <div class="complete-task task bg-success text-white in-progress d-flex justify-content-between p-2" data-id="{{id}}"
         data-status="{{status}}">
         {{!-- {{id}} --}}
         {{task}}
-        <span class="float-right"><i class ="delete-task fas fa-minus-circle"></i></span>
+        <span class="float-right"><i class ="delete-task fas fa-check"></i></span>
 
     </div>
     {{!-- <i class="view-task fas fa-ellipsis-h"></i> --}}

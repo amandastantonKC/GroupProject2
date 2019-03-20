@@ -96,20 +96,21 @@ $(document).ready(function() {
         })
     };
 
-    $("#delete_task").on("click", function (event) {
+
+    $(".delete-task").on("click", function (event) {
         event.preventDefault();
 
-        var id =$("#{{id}}").data("id");
+        var id = $(".complete-task").data("id");
 
         $.ajax({
-            type:"DELETE",
-            url: "/api/todos/" + id
+            type: "DELETE",
+            url: "api/todos/" + id
         }).then(
             window.location.reload()
         );
-    });
+    })
 
-    
+
   
 });
 

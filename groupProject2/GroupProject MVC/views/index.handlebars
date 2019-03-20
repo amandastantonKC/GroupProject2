@@ -9,8 +9,10 @@
     <div class="row text-dark">
       <div class=" col-md-4 task-list my-4">
 
-        <h2 class="task-list-title h5 bg-primary p-3 my-0">To Do</h2>
-        <ul class="task-list-ul list-unstyled bg-light p-3 my-0" data-status="todo">
+
+        <h2 class="task-list-title h5 bg-light p-3 my-0">To Do</h2>
+        <ul class="task-list-ul list-unstyled bg-light p-3 my-0" data-status="todo" id ="sortable">
+
           {{#each todos}}
           {{#ifeq status "todo"}}
           {{> todos/todo-block}}

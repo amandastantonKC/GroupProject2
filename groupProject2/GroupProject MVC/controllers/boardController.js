@@ -55,8 +55,10 @@ router.put("/api/todos/:id/:status", function(req, res) {
   );
 });
 
-router.delete("/api/todos/", function(req,res) {
-  var condition = `id = ${req.params.id}`;
+
+router.delete("/api/todos/:id", function(req,res) {
+  var condition = "id = " + req.params.id;
+
   
   todo.deleteOne(condition, function (result) {
     if (result.changedRows === 0) {

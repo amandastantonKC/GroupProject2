@@ -1,4 +1,4 @@
-<li class="task-li my-3">
+<li class="task-li my-3 ui-state-default">
     {{#ifeq status "todo"}}
     <div class="task bg-danger text-white todo d-flex justify-content-between p-2 ui-sortable rounded" data-id="{{id}}"
         data-status="{{status}}">
@@ -16,11 +16,13 @@
     </div>
     {{/ifeq}}
     {{#ifeq status "complete"}}
-    <div class="task bg-success text-white in-progress d-flex justify-content-between p-2 ui-sortable rounded" data-id="{{id}}"
+
+    <div class="complete-task bg-success text-white in-progress d-flex justify-content-between p-2" data-id="{{id}}"
         data-status="{{status}}">
         {{!-- {{id}} --}}
         {{task}}
-        <span class="float-right"><i class ="view-task fas fa-minus-circle" id = "delete_task"></i></i></span>
+        <span class="float-right"><i class ="delete-task fas fa-minus-circle"></i></span>
+
     </div>
     {{!-- <i class="view-task fas fa-ellipsis-h"></i> --}}
     {{/ifeq}}

@@ -55,8 +55,10 @@ router.put("/api/todos/:id/:status", function(req, res) {
   );
 });
 
+
 router.delete("/api/todos/:id", function(req,res) {
   var condition = "id = " + req.params.id;
+
   
   todo.deleteOne(condition, function (result) {
     if (result.changedRows === 0) {
@@ -64,7 +66,7 @@ router.delete("/api/todos/:id", function(req,res) {
     } else {
       res.status(200).end();
     }
-  })
+  });
 })
 
 // Export routes for server.js to use.

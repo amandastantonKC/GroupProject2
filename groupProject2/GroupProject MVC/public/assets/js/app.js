@@ -28,8 +28,6 @@ $(document).ready(function() {
         var id = $(event.currentTarget).data("id");
         $.ajax({
             url: `api/todos/${id}/${$("#update-status").val()}`,
-
-
             method: "PUT",
         }).then(
             function() {
@@ -98,6 +96,7 @@ $(document).ready(function() {
         })
     };
 
+
     $(".delete-task").on("click", function (event) {
         event.preventDefault();
 
@@ -110,6 +109,7 @@ $(document).ready(function() {
             window.location.reload()
         );
     })
+
 
   
 });
